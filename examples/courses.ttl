@@ -1,0 +1,35 @@
+@prefix : <#>.
+@prefix golf: <../>.
+
+:157668281192491051806606399
+    a golf:Course;
+    golf:courseHoles :15766828119254505216892108528;
+    golf:courseName "course1";
+    golf:courseSlope 32.
+:15766828119254505216892108528
+    a golf:Hole;
+    golf:holeLength 345;
+    golf:holeName "";
+    golf:holeNumber 1;
+    golf:holePar 4;
+    golf:holeStrokeIndex 1.
+:15766828743991202271601754159
+    a golf:Course;
+    golf:courseHoles
+    :15766828744006985012140405173, :157668287440439742789122521316;
+    golf:courseName "course2";
+    golf:courseSlope 42.
+:15766828744006985012140405173
+    a golf:Hole;
+    golf:holeLength 432;
+    golf:holeName "Brown";
+    golf:holeNumber 1;
+    golf:holePar 4;
+    golf:holeStrokeIndex 5.
+:157668287440439742789122521316
+    a golf:Hole;
+    golf:holeLength 510;
+    golf:holeName "Pigeon";
+    golf:holeNumber 2;
+    golf:holePar 5;
+    golf:holeStrokeIndex 2.

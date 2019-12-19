@@ -1,0 +1,21 @@
+@prefix : <https://michaud.inrupt.net/public/clubs/>.
+@prefix golf: <https://michaud.inrupt.net/public/golf/> .
+@prefix me: <https://michaud.inrupt.net/profile/card#me> .
+
+:1574901524600 rdf:type golf:Putter ;
+    golf:clubBrand "Taylor made" ;
+    golf:clubName "something" ;
+    golf:clubType golf:TwoIron;
+    golf:ownedBy me:  .
+
+:1574901794060 rdf:type golf:FiveIron ;
+    golf:clubName "5 iron" ;
+    golf:clubBrand "Ping" ;
+    golf:clubType golf:FiveIron;
+    golf:ownedBy me: .
+
+:1574901885144 rdf:type golf:Driver ;
+    golf:clubBrand "Ping" ;
+    golf:clubName "Stingray" ;
+    golf:clubType golf:Hybrid;
+    golf:ownedBy me: .

@@ -1,0 +1,11 @@
+@prefix : <https://michaud.inrupt.net/public/bag/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix golf: <https://michaud.inrupt.net/public/golf/> .
+
+###  https://michaud.inrupt.net/public/golf/data/bag#1574901956534
+
+:1574901956534 rdf:type golf:Bag ;
+                        
+golf:bagClubs golf:mvclub1574901524600 ,
+                golf:mvclub1574901794060 ,
+                golf:mvclub1574901885144 .
