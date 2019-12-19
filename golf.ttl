@@ -1,0 +1,378 @@
+@prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix golf: <https://michaud.inrupt.net/public/golf/> .
+
+golf: rdf:type owl:Ontology ;
+    # Description
+    dcterms:title "Golf ontology" ;
+    dcterms:description """
+    # The golf ontology aims at describing golf.
+    """ ;
+.
+
+golf:fieldLabel a rdfs:label .
+
+#player definition
+golf:Player a schema:Person ;
+ 	rdfs:label "Player"@en ;
+    golf:fieldLabel "Player"@en ;
+	rdfs:comment "player in a golf game"@en ;
+.
+
+golf:playingHandicap a rdf:Property;
+ 	rdfs:label "playingHandicap"@en ;
+    golf:fieldLabel "Playing handicap"@en ;
+	rdfs:comment "handicap of the player calculated from the players handicap and the difficulty of the course"@en ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:domain golf:Player;
+.
+
+golf:handicap a rdf:Property ;
+ 	rdfs:label "handicap"@en ;
+    golf:fieldLabel "Player handicap"@en ;
+	rdfs:comment "handicap of the player"@en ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:domain golf:Player ;
+.
+
+#club definition
+golf:Club a rdfs:Class ;
+ 	rdfs:label "Club"@en ;
+    golf:fieldLabel "Club"@en ;
+	rdfs:comment "golf club"@en ;
+.
+
+golf:ownedBy a rdf:Property ;
+ 	rdfs:label "ownedBy"@en ;
+    golf:fieldLabel "Owner"@en ;
+	rdfs:comment "owner of the club"@en ;
+    rdfs:range golf:Player ;
+    rdfs:domain golf:Club ;
+.
+
+golf:clubName a rdf:Property ;
+ 	rdfs:label "clubName"@en ;
+    golf:fieldLabel "Club name"@en ;
+    rdfs:comment "name of the club"@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain golf:Club ;
+.
+
+golf:clubType a rdf:Property ;
+ 	rdfs:label "clubType"@en ;
+    golf:fieldLabel "Club type"@en ;
+	rdfs:comment "name of the club type"@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain golf:Club ;
+.
+
+golf:clubBrand a rdf:Property ;
+ 	rdfs:label "clubBrand"@en ;
+    golf:fieldLabel "Club brand"@en ;
+	rdfs:comment "name of the brand of the club"@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain golf:Club ;
+.
+
+#bag definition
+golf:Bag a rdfs:Class ;
+ 	rdfs:label "Bag"@en ;
+    golf:fieldLabel "Bag"@en ;     
+	rdfs:comment "the bag which contains the clubs while the player plays a game of golf"@en ;
+.
+
+golf:clubs a rdf:Property ;
+ 	rdfs:label "clubs"@en ;
+    golf:fieldLabel "Clubs"@en ;
+	rdfs:comment "list of Clubs in the bag"@en ;
+    rdfs:range golf:Club ;
+    rdfs:domain golf:Bag ;
+.
+
+#course definition
+golf:Course a rdfs:Class ;
+    rdfs:label "Course"@en ;
+    golf:fieldLabel "Course"@en ;
+    rdfs:comment "A course is a terrain where players hit a ball into a hole."@en ;
+.
+
+golf:courseSlope a rdf:Property ;
+    rdfs:label "courseSlope"@en ;
+    golf:fieldLabel "Slope"@en ;
+    rdfs:commemt "slope is a difficult indication of a course"@en ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:domain golf:Course;
+.
+
+golf:courseName a rdf:Property ;
+    rdfs:label "courseName"@en ;
+    golf:fieldLabel "Name"@en ;
+    rdfs:commemt "name of the course"@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain golf:Course;
+.
+
+golf:courseHoles a rdf:Property ;
+    rdfs:label "courseHoles"@en ;
+    golf:fieldLabel "Holes"@en ;
+    rdfs:commemt "the holes in a golf course"@en ;
+    rdfs:range golf:Hole;
+    rdfs:domain golf:Course ;
+.
+
+#hole definition
+golf:Hole a rdfs:Class ;
+    rdfs:label "Hole"@en ;
+    golf:fieldLabel "Hole"@en ;
+    rdfs:comment "A hole is a target for players to hit a ball into."@en ;
+.
+
+golf:holeNumber a rdf:Property ;
+    rdfs:label "holeNumber" ;
+    golf:fieldLabel "Hole number"@en ;
+    rdfs:comment "the sequential number of the hole."@en ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:domain golf:Hole ;
+.
+
+golf:holeStrokeIndex a rdf:Property ;
+    rdfs:label "holeStrokeIndex"@en ;
+    golf:fieldLabel "Stroke index"@en ;
+    rdfs:comment "an indication of how difficult the hole is."@en ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:domain golf:Hole ;
+.
+
+golf:holeName a rdf:Property ;
+    rdfs:label "holeName"@en ;
+    golf:fieldLabel "Hole name"@en ;
+    rdfs:comment "name of the hole."@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain golf:Hole ;    
+.
+
+golf:holePar a rdf:Property ;
+    rdfs:label "holePar"@en ;
+    golf:fieldLabel "Clubs"@en ;
+    rdfs:comment "par count of a hole."@en ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:domain golf:Hole ;
+.
+
+golf:holeLength a rdf:Property ;
+    rdfs:label "holeLength"@en ;
+    golf:fieldLabel "Length"@en ;
+    rdfs:comment "length of a hole."@en ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:domain golf:Hole ;
+.
+
+# game definition
+
+golf:Game a rdfs:Class ;
+    rdfs:label "Game"@en ;
+    golf:fieldLabel "Game"@en ;
+    rdfs:comment "a nine or 18 holes game of golf."@en ;
+.
+
+golf:gameName a rdf:Property ;
+    rdfs:label "gameName"@en ;
+    golf:fieldLabel "Name"@en ;
+    rdfs:comment "Name of the game played."@en ;
+    rdfs:range xsd:string ;
+    rdfs:domain golf:Game ;
+.
+
+golf:gameDate a rdf:Property ;
+    rdfs:label "gameDate"@en ;
+    golf:fieldLabel "Date"@en ;
+    rdfs:comment "Date of the game played."@en ;
+    rdfs:range schema:DateTime ;
+    rdfs:domain golf:Game ;
+.
+
+golf:gameBag a rdf:Property ;
+    rdfs:label "gameBag"@en ;
+    golf:fieldLabel "Bag"@en ;
+    rdfs:comment "Bag contains the clubs used when playing the specific game."@en ;
+    rdfs:range golf:Bag ;
+    rdfs:domain golf:Game ;
+.
+
+golf:gamePlayer a rdf:Property ;
+    rdfs:label "gamePlayer"@en ;
+    golf:fieldLabel "Player"@en ;
+    rdfs:comment "player playing the specific game."@en ;
+    rdfs:range golf:Player ;
+    rdfs:domain golf:Game ;
+.
+
+golf:gameMarker a rdf:Property ;
+    rdfs:label "gameMarker"@en ;
+    golf:fieldLabel "Marker"@en ;
+    rdfs:comment "marker for the player playing the specific game."@en ;
+    rdfs:range golf:Player ;
+    rdfs:domain golf:Game ;
+.
+
+golf:gameCourse a rdf:Property ;
+    rdfs:label "gameCourse"@en ;
+    golf:fieldLabel "Course"@en ;
+    rdfs:comment "course played in the specific game."@en ;
+    rdfs:range golf:Course ;
+    rdfs:domain golf:Game ;
+.
+
+golf:GameHole a rdfs:Class;
+    rdfs:label "gameHole"@en ;
+    golf:fieldLabel "Hole"@en ;
+    rdfs:comment "hole played during a golf game."@en ;
+	rdfs:subClassOf golf:Hole ;	
+.
+
+golf:strokes a rdf:Property ;
+    rdfs:label "strokes"@en ;
+    golf:fieldLabel "Strokes"@en ;
+    rdfs:comment "The amount of strokes a player hit to get the golf ball into the hole."@en ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:domain golf:GameHole ;
+.
+
+#club types
+golf:TwoIron a rdfs:Class ;
+    rdfs:label "TwoIron"@en ;
+    golf:fieldLabel "Two Iron"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:ThreeIron a rdfs:Class ;
+    rdfs:label "ThreeIron"@en ;
+    golf:fieldLabel "Three Iron"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:FourIron a rdfs:Class ;
+    rdfs:label "FourIron"@en ;
+    golf:fieldLabel "Four Iron"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:FiveIron a rdfs:Class ;
+    rdfs:label "FiveIron"@en ;
+    golf:fieldLabel "Five Iron"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:SixIron a rdfs:Class ;
+    rdfs:label "SixIron"@en ;
+    golf:fieldLabel "Six Iron"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:SevenIron a rdfs:Class ;
+    rdfs:label "SevenIron"@en ;
+    golf:fieldLabel "Seven Iron"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:EightIron a rdfs:Class ;
+    rdfs:label "EightIron"@en ;
+    golf:fieldLabel "Eight Iron"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:NineIron a rdfs:Class ;
+    rdfs:label "NineIron"@en ;
+    golf:fieldLabel "Nine Iron"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:Driver a rdfs:Class ;
+    rdfs:label "Driver"@en ;
+    golf:fieldLabel "Driver"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:TwoWood a rdfs:Class ;
+    rdfs:label "TwoWood"@en ;
+    golf:fieldLabel "Two Wood"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:ThreeWood a rdfs:Class ;
+    rdfs:label "ThreeWood"@en ;
+    golf:fieldLabel "Three Wood"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:FourWood a rdfs:Class ;
+    rdfs:label "FourWood"@en ;
+    golf:fieldLabel "Four Wood"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:FiveWood a rdfs:Class ;
+    rdfs:label "FiveWood"@en ;
+    golf:fieldLabel "Five Wood"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:Hybrid a rdfs:Class ;
+    rdfs:label "Hybrid"@en ;
+    golf:fieldLabel "Hybrid"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:PitchingWedge a rdfs:Class ;
+    rdfs:label "PitchingWedge"@en ;
+    golf:fieldLabel "Pitching Wedge"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:GapWedge a rdfs:Class ;
+    rdfs:label "GapWedge"@en ;
+    golf:fieldLabel "Gap Wedge"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:SandWedge a rdfs:Class ;
+    rdfs:label "SandWedge"@en ;
+    golf:fieldLabel "Sand Wedge"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:LobWedge a rdfs:Class ;
+    rdfs:label "LobWedge"@en ;
+    golf:fieldLabel "Lob Wedge"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:Putter a rdfs:Class ;
+    rdfs:label "Putter"@en ;
+    golf:fieldLabel "Putter"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
