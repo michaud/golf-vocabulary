@@ -24,11 +24,27 @@ golf:Player a schema:Person ;
 	rdfs:comment "player in a golf game"@en ;
 .
 
+golf:givenName a rdf:Property;
+ 	rdfs:label "givenName"@en ;
+    golf:fieldLabel "Given name"@en ;
+	rdfs:comment "Given name of the player"@en ;
+    rdfs:range schema:Text ;
+    rdfs:domain golf:Player;
+.
+
+golf:familyName a rdf:Property;
+ 	rdfs:label "familyName"@en ;
+    golf:fieldLabel "Family name"@en ;
+	rdfs:comment "Family name of the player"@en ;
+    rdfs:range schema:Text ;
+    rdfs:domain golf:Player;
+.
+
 golf:playingHandicap a rdf:Property;
  	rdfs:label "playingHandicap"@en ;
     golf:fieldLabel "Playing handicap"@en ;
 	rdfs:comment "handicap of the player calculated from the players handicap and the difficulty of the course"@en ;
-    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:range xsd:integer ;
     rdfs:domain golf:Player;
 .
 
@@ -36,7 +52,7 @@ golf:handicap a rdf:Property ;
  	rdfs:label "handicap"@en ;
     golf:fieldLabel "Player handicap"@en ;
 	rdfs:comment "handicap of the player"@en ;
-    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:range xsd:integer ;
     rdfs:domain golf:Player ;
 .
 
