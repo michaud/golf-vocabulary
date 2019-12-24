@@ -56,6 +56,8 @@ golf:handicap a rdf:Property ;
     rdfs:domain golf:Player ;
 .
 
+golf:Marker a golf:Player .
+
 #club definition
 golf:Club a rdfs:Class ;
  	rdfs:label "Club"@en ;
