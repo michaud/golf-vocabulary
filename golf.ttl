@@ -85,7 +85,7 @@ golf:clubType a rdf:Property ;
  	rdfs:label "clubType"@en ;
     golf:fieldLabel "Club type"@en ;
 	rdfs:comment "name of the club type"@en ;
-    rdfs:range xsd:string ;
+    rdfs:range golf:Club ;
     rdfs:domain golf:Club ;
 .
 
