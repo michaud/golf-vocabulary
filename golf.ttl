@@ -253,12 +253,55 @@ golf:GameHole a rdfs:Class;
 	rdfs:subClassOf golf:Hole ;	
 .
 
-golf:strokes a rdf:Property ;
-    rdfs:label "strokes"@en ;
-    golf:fieldLabel "Strokes"@en ;
+# could be derived from golf:gameStrokes
+golf:gameStrokeCount a rdf:Property ;
+    rdfs:label "gameStrokeCount"@en ;
+    golf:fieldLabel "Stroke count"@en ;
     rdfs:comment "The amount of strokes a player hit to get the golf ball into the hole."@en ;
     rdfs:range xsd:nonNegativeInteger ;
     rdfs:domain golf:GameHole ;
+.
+
+golf:gameStrokes a rdf:Property ;
+    rdfs:label "gameStrokeCount"@en ;
+    golf:fieldLabel "Stroke count"@en ;
+    rdfs:comment "List of strokes a player hits to get the golf ball into the hole."@en ;
+    rdfs:range golf:Stroke ;
+    rdfs:domain golf:GameHole ;
+.
+
+# stroke definition
+golf:Stroke a rdfs:Class;
+    rdfs:label "Stroke"@en ;
+    golf:fieldLabel "Stroke"@en ;
+    rdfs:comment "A stroke a player hit to get the golf ball into the hole."@en ;
+.
+
+#latitude	Number  or Text 	The latitude of a location. For example 37.42242 (WGS 84).
+#longitude	Number  or Text 	The longitude of a location. For example -122.08585 (WGS 84).
+golf:strokeLocation a rdf:Property ;
+    rdfs:label "strokeLocation"@en ;
+    golf:fieldLabel "location"@en ;
+    rdfs:comment "The location a stroke was hit."@en ;
+    rdfs:range schema:GeoCoordinates ;
+    rdfs:domain golf:Stroke ;
+.
+
+golf:strokeClub a rdf:Property;
+    rdfs:label "strokeClub"@en ;
+    golf:fieldLabel "location"@en ;
+    rdfs:comment "The club a stroke was hit with."@en ;
+    rdfs:range golf:Club ;
+    rdfs:domain golf:Stroke ;
+.
+
+#[-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]    
+golf:strokeDate a rdf:Property;
+    rdfs:label "strokeDate"@en ;
+    golf:fieldLabel "date"@en ;
+    rdfs:comment "The Moment a stroke was hit with."@en ;
+    rdfs:range schema:DateTime ;
+    rdfs:domain golf:Stroke ;
 .
 
 #club types
