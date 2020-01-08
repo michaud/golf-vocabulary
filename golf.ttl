@@ -40,14 +40,6 @@ golf:familyName a rdf:Property;
     rdfs:domain golf:Player;
 .
 
-golf:playingHandicap a rdf:Property;
- 	rdfs:label "playingHandicap"@en ;
-    golf:fieldLabel "Playing handicap"@en ;
-	rdfs:comment "handicap of the player calculated from the players handicap and the difficulty of the course"@en ;
-    rdfs:range xsd:integer ;
-    rdfs:domain golf:Player;
-.
-
 golf:handicap a rdf:Property ;
  	rdfs:label "handicap"@en ;
     golf:fieldLabel "Player handicap"@en ;
@@ -228,6 +220,36 @@ golf:gamePlayer a rdf:Property ;
     rdfs:comment "player playing the specific game."@en ;
     rdfs:range golf:Player ;
     rdfs:domain golf:Game ;
+.
+
+golf:gamePlayingHandicap a rdf:Property;
+    rdfs:label "gamePlayingHandicap"@en ;
+    golf:fieldLabel "Player"@en ;
+	rdfs:comment "Handicap used for a course in a game by a marker, handicap of the player or marker calculated from the players handicap and the difficulty of the course"@en ;
+    rdfs:range xsd:GamePlayingHandicap ;
+    rdfs:domain golf:Game ;
+.
+
+golf:GamePlayingHandicap a rdfs:Class;
+    rdfs:label "GamePlayingHandicap"@en ;
+    golf:fieldLabel "Playing handicap"@en ;
+    rdfs:comment "Handicap used for a course in a game for player and marker."@en ;
+.
+
+golf:playerPlayingHandicap a rdf:Property;
+    rdfs:label "playerPlayingHandicap"@en ;
+    golf:fieldLabel "Player"@en ;
+	rdfs:comment "Handicap used for a course in a game by a marker, handicap of the player or marker calculated from the players handicap and the difficulty of the course"@en ;
+    rdfs:range xsd:integer ;
+    rdfs:domain golf:GamePlayingHandicap ;
+.
+
+golf:markerPlayingHandicap a rdf:Property;
+ 	rdfs:label "markerPlayingHandicap"@en ;
+    golf:fieldLabel "Marker"@en ;
+	rdfs:comment "Handicap used for a course in a game by a marker, handicap of the player or marker calculated from the players handicap and the difficulty of the course"@en ;
+    rdfs:range xsd:integer ;
+    rdfs:domain golf:GamePlayingHandicap;
 .
 
 golf:gameMarker a rdf:Property ;
