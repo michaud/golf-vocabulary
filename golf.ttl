@@ -224,9 +224,9 @@ golf:gamePlayer a rdf:Property ;
 
 golf:gamePlayingHandicap a rdf:Property;
     rdfs:label "gamePlayingHandicap"@en ;
-    golf:fieldLabel "Player"@en ;
+    golf:fieldLabel "Playing handicap"@en ;
 	rdfs:comment "Handicap used for a course in a game by a marker, handicap of the player or marker calculated from the players handicap and the difficulty of the course"@en ;
-    rdfs:range xsd:GamePlayingHandicap ;
+    rdfs:range golf:GamePlayingHandicap ;
     rdfs:domain golf:Game ;
 .
 
