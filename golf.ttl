@@ -49,21 +49,12 @@ golf:handicap a rdf:Property ;
 .
 
 golf:Marker a golf:Player .
-golf:Owner a golf:Player .
 
 #club definition
 golf:Club a rdfs:Class ;
  	rdfs:label "Club"@en ;
     golf:fieldLabel "Club"@en ;
 	rdfs:comment "golf club"@en ;
-.
-
-golf:ownedBy a rdf:Property ;
- 	rdfs:label "ownedBy"@en ;
-    golf:fieldLabel "Owner"@en ;
-	rdfs:comment "owner of the club"@en ;
-    rdfs:range golf:Owner ;
-    rdfs:domain golf:Club ;
 .
 
 golf:clubName a rdf:Property ;
