@@ -260,6 +260,15 @@ golf:gameCourse a rdf:Property ;
     rdfs:domain golf:Game ;
 .
 
+golf:gameVerified a rdf:Property ;
+    rdfs:label "gameVerified"@en ;
+    golf:fieldLabel "Verified"@en ;
+    rdfs:comment "is the game verified and therefor locked."@en ;
+    rdfs:range xsd:boolean ;
+    rdfs:domain golf:Game ;
+.
+
+
 golf:GameHole a rdfs:Class;
     rdfs:label "gameHole"@en ;
     golf:fieldLabel "Hole"@en ;
