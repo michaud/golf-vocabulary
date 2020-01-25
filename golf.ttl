@@ -328,6 +328,48 @@ golf:strokeDate a rdf:Property;
 .
 
 #club types
+golf:Driver a rdfs:Class ;
+    rdfs:label "Driver"@en ;
+    golf:fieldLabel "Driver"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:TwoWood a rdfs:Class ;
+    rdfs:label "TwoWood"@en ;
+    golf:fieldLabel "Two Wood"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:ThreeWood a rdfs:Class ;
+    rdfs:label "ThreeWood"@en ;
+    golf:fieldLabel "Three Wood"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:FourWood a rdfs:Class ;
+    rdfs:label "FourWood"@en ;
+    golf:fieldLabel "Four Wood"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:FiveWood a rdfs:Class ;
+    rdfs:label "FiveWood"@en ;
+    golf:fieldLabel "Five Wood"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
+golf:Hybrid a rdfs:Class ;
+    rdfs:label "Hybrid"@en ;
+    golf:fieldLabel "Hybrid"@en ;
+    rdfs:comment "a club with a specific loft."@en ;
+	rdfs:subClassOf golf:Club ;
+.
+
 golf:TwoIron a rdfs:Class ;
     rdfs:label "TwoIron"@en ;
     golf:fieldLabel "Two Iron"@en ;
@@ -380,48 +422,6 @@ golf:EightIron a rdfs:Class ;
 golf:NineIron a rdfs:Class ;
     rdfs:label "NineIron"@en ;
     golf:fieldLabel "Nine Iron"@en ;
-    rdfs:comment "a club with a specific loft."@en ;
-	rdfs:subClassOf golf:Club ;
-.
-
-golf:Driver a rdfs:Class ;
-    rdfs:label "Driver"@en ;
-    golf:fieldLabel "Driver"@en ;
-    rdfs:comment "a club with a specific loft."@en ;
-	rdfs:subClassOf golf:Club ;
-.
-
-golf:TwoWood a rdfs:Class ;
-    rdfs:label "TwoWood"@en ;
-    golf:fieldLabel "Two Wood"@en ;
-    rdfs:comment "a club with a specific loft."@en ;
-	rdfs:subClassOf golf:Club ;
-.
-
-golf:ThreeWood a rdfs:Class ;
-    rdfs:label "ThreeWood"@en ;
-    golf:fieldLabel "Three Wood"@en ;
-    rdfs:comment "a club with a specific loft."@en ;
-	rdfs:subClassOf golf:Club ;
-.
-
-golf:FourWood a rdfs:Class ;
-    rdfs:label "FourWood"@en ;
-    golf:fieldLabel "Four Wood"@en ;
-    rdfs:comment "a club with a specific loft."@en ;
-	rdfs:subClassOf golf:Club ;
-.
-
-golf:FiveWood a rdfs:Class ;
-    rdfs:label "FiveWood"@en ;
-    golf:fieldLabel "Five Wood"@en ;
-    rdfs:comment "a club with a specific loft."@en ;
-	rdfs:subClassOf golf:Club ;
-.
-
-golf:Hybrid a rdfs:Class ;
-    rdfs:label "Hybrid"@en ;
-    golf:fieldLabel "Hybrid"@en ;
     rdfs:comment "a club with a specific loft."@en ;
 	rdfs:subClassOf golf:Club ;
 .
