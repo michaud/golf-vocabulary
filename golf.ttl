@@ -293,6 +293,14 @@ golf:gameStrokeCount a rdf:Property ;
     rdfs:domain golf:GameHole ;
 .
 
+golf:gameMarkerStrokeCount a rdf:Property ;
+    rdfs:label "gameMarkerStrokeCount"@en ;
+    golf:fieldLabel "Stroke count"@en ;
+    rdfs:comment "The amount of strokes the marker hit to get the golf ball into the hole."@en ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:domain golf:GameHole ;
+.
+
 golf:gameStrokes a rdf:Property ;
     rdfs:label "gameStrokeCount"@en ;
     golf:fieldLabel "Stroke count"@en ;
