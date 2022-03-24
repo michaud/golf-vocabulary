@@ -5,7 +5,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-@prefix golf: <https://michaud.inrupt.net/public/golf/> .
+@prefix golf: <https://michaud.inrupt.net/public/golfvocab/> .
 
 golf: rdf:type owl:Ontology ;
     # Description
@@ -263,7 +263,15 @@ golf:gameCourse a rdf:Property ;
 golf:gameVerified a rdf:Property ;
     rdfs:label "gameVerified"@en ;
     golf:fieldLabel "Verified"@en ;
-    rdfs:comment "is the game verified and therefor locked."@en ;
+    rdfs:comment "is the game verified and therefore locked."@en ;
+    rdfs:range xsd:boolean ;
+    rdfs:domain golf:Game ;
+.
+
+golf:gameStarted a rdf:Property ;
+    rdfs:label "gameStarted"@en ;
+    golf:fieldLabel "Started"@en ;
+    rdfs:comment "is the game started and therefore locked."@en ;
     rdfs:range xsd:boolean ;
     rdfs:domain golf:Game ;
 .
